@@ -1,6 +1,6 @@
 resource "aws_security_group" "test_sg" {
-  name        = "test_sg"
-  description = "test_sg"
+  name        = "test_sg_2"
+  description = "test_sg_2"
 
   ingress {
     from_port   = 22
@@ -27,7 +27,7 @@ resource "aws_security_group" "test_sg" {
   }
 
   lifecycle {
-    ignore_changes = [
-    ingress]
+    create_before_destroy = true
   }
+
 }
